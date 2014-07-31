@@ -41,9 +41,10 @@ corobic = zdobadzpolecenie(polecenia)
 if corobic == 'stankonta':
 	balansowanie = br.open('https://trm24.pl/panel-trm/balance.jsp')
 	balansowac = balansowanie.read()
-	balanoss = str(re.search(r'strong.*?PLN', str(re.search(r'wynosi.*strong.*?PLN', balansowac, re.S).group()), re.S).group())
+	balanoss = str(re.search(r'strong.*?PL', str(re.search(r'wynosi.*strong.*?PL', balansowac, re.S).group()), re.S).group())
 	#try: 
-	balansik = int(str(re.search(r'(\d*.\d{2})', balanoss, re.S).group()))
+	#balansik = int(str(re.search(r'(\d*.\d{2})', balanoss, re.S).group()))
+	balansik = int(str(re.sub(r'\D', "", balanoss)))/100
 	#except:
 	#	balansik = int(str(re.sub(r'([^0-9.])', '', str(re.search(r'(\d*.\d{2})', balanoss, re.S).group())))
 		#try:

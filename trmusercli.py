@@ -39,22 +39,22 @@ print odpoa.info()
 #print odpoa.read()
 corobic = zdobadzpolecenie(polecenia)
 if corobic == 'stankonta':
-	balansowanie = br.open("https://trm24.pl/panel-trm/balance.jsp")
+	balansowanie = br.open('https://trm24.pl/panel-trm/balance.jsp')
 	balansowac = balansowanie.read()
 	balanoss = str(re.search(r'strong.*?PLN', str(re.search(r'wynosi.*strong.*?PLN', balansowac, re.S).group()), re.S).group())
-	try: 
-		balansik = int(str(re.search(r'(\d*.\d{2})', balanoss, re.S).group()))
-	except:
-		balansik = int(str(re.sub(r'([^0-9.])', '', str(re.search(r'(\d*.\d{2})', balanoss, re.S).group())))
+	#try: 
+	balansik = int(str(re.search(r'(\d*.\d{2})', balanoss, re.S).group()))
+	#except:
+	#	balansik = int(str(re.sub(r'([^0-9.])', '', str(re.search(r'(\d*.\d{2})', balanoss, re.S).group())))
 		#try:
 		#	print u'Błąd/Eraron/Error: Niepoprawny/Malkorektan/Incorrect "balanoss" value/wartość [try]: %s' % balanoss
 		#except:
-		print 'Eraron Error Niepoprawny Malkorektan Incorrect balanoss value-wartosc ---- '
-		print balanoss
-		print 'UP balanoss ----'
-		print balansik
-		print 'UP balansik ----'
-		quit()
+		#print 'Eraron Error Niepoprawny Malkorektan Incorrect balanoss value-wartosc ---- '
+		#print balanoss
+		#print 'UP balanoss ----'
+		#print balansik
+		#print 'UP balansik ----'
+		#quit()
 	print 'Stan twojego konta na TRM24.pl wynosi: %#.2f PLN' % balansik
 elif corobic == 'wypozyczenia':
 	br.open('https://trm24.pl/panel-trm/borrow.jsp')

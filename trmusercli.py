@@ -68,11 +68,11 @@ elif corobic == 'wypozyczenia':
 	odyear = int(raw_input("Data początkowa: rok [XXXX]: "))
 	odmonth = int(raw_input("Data początkowa: miesiąc [1-12]: "))
 	odday = int(raw_input("Data początkowa: dzień: "))
-	br['data_od'] = "%04d-%02d-%02d" % odyear, odmonth, odday
+	br['data_od'] = "%04d-%02d-%02d" % (odyear, odmonth, odday)
 	doyear = int(raw_input("Data końcowa: rok: "))
 	domonth = int(raw_input("Data końcowa: miesiąc [1-12]: "))
 	doday = int(raw_input("Data końcowa: dzień: "))
-	br['data_do'] = "%04d-%02d-%02d" % doyear, domonth, doday
+	br['data_do'] = "%04d-%02d-%02d" % (doyear, domonth, doday)
 	wypostronka = br.submit()
 	tabwypfull = str(re.search(r'table.*?Rower.*?Slot.*?Koszt.*?/table', wypostronka.read(), re.S).group())
 	tabo1 = str(re.sub(r'table', "", tabwypfull))

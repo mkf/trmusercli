@@ -64,7 +64,7 @@ elif corobic == 'wypozyczenia':
 	#wypozyczanie = wypozyczania.read()
 	#lang: terazwybierzdatypoczatkowaikoncowa
 	print "Teraz wybierz datę początkową i końcową:"
-	br.select_form(name = "")
+	br.select_form(nr=0)
 	odyear = int(raw_input("Data początkowa: rok [XXXX]: "))
 	odmonth = int(raw_input("Data początkowa: miesiąc [1-12]: "))
 	odday = int(raw_input("Data początkowa: dzień: "))

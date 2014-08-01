@@ -93,7 +93,7 @@ class corobienie:
 			tabila.append(tabi1)
 		print tabila
 		return tabila
-	def histtransakcji(br)
+	def histtransakcji(br):
 		stankontatuple = self.stankonta(br,"y")
 		stankonta = stankontatuple[0]
 		histrw = [stankonta]

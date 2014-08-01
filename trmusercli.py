@@ -68,17 +68,22 @@ class corobienie:
 		#lang: terazwybierzdatypoczatkowaikoncowa
 		print "Teraz wybierz datę początkową i końcową:"
 		br.select_form(nr=0)
+		print br
 		#print br.form
+		#lang: datapoczątkowa, rok, miesiąc, dzień
 		odyear = int(raw_input("Data początkowa: rok [XXXX]: "))
 		odmonth = int(raw_input("Data początkowa: miesiąc [1-12]: "))
 		odday = int(raw_input("Data początkowa: dzień: "))
 		startdate = "%04d-%02d-%02d" % (odyear, odmonth, odday)
-		print "Wybrano datę końcową %s " % startdate
+		#lang: wybrano datę początkową
+		print "Wybrano datę początkową %s " % startdate
 		br['startDate'] = startdate
+		#lang: datakońcowa, rok, miesiąc, dzień
 		doyear = int(raw_input("Data końcowa: rok: "))
 		domonth = int(raw_input("Data końcowa: miesiąc [1-12]: "))
 		doday = int(raw_input("Data końcowa: dzień: "))
 		enddate = "%04d-%02d-%02d" % (doyear, domonth, doday)
+		#lang: wybrano datę końcową
 		print "Wybrano datę końcową %s " % enddate
 		br['endDate'] = enddate
 		wypostronka = br.submit()

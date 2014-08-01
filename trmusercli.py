@@ -72,11 +72,15 @@ class corobienie:
 		odyear = int(raw_input("Data początkowa: rok [XXXX]: "))
 		odmonth = int(raw_input("Data początkowa: miesiąc [1-12]: "))
 		odday = int(raw_input("Data początkowa: dzień: "))
-		br['startDate'] = "%04d-%02d-%02d" % (odyear, odmonth, odday)
+		startdate = "%04d-%02d-%02d" % (odyear, odmonth, odday)
+		print "Wybrano datę końcową %s " % startdate
+		br['startDate'] = startdate
 		doyear = int(raw_input("Data końcowa: rok: "))
 		domonth = int(raw_input("Data końcowa: miesiąc [1-12]: "))
 		doday = int(raw_input("Data końcowa: dzień: "))
-		br['endDate'] = "%04d-%02d-%02d" % (doyear, domonth, doday)
+		enddate = "%04d-%02d-%02d" % (doyear, domonth, doday)
+		print "Wybrano datę końcową %s " % enddate
+		br['endDate'] = enddate
 		wypostronka = br.submit()
 		tabwypfull = str(re.search(r'table.*?Rower.*?Slot.*?Koszt.*?/table', wypostronka.read(), re.S).group())
 		tabo1 = str(re.sub(r'table', "", tabwypfull))

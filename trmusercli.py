@@ -56,9 +56,9 @@ class corobienie:
 			#quit()
 		#lang: stantwojegokontawynosi
 		print 'Stan twojego konta na TRM24.pl wynosi: %#.2f PLN' % balansik
-		if dajreada = "n":
+		if dajreada == "n":
 			return balansik
-		elif dajreada = "y":
+		elif dajreada == "y":
 			tuplebalansikiread = (balansik, balansowac)
 			return tuplebalansikiread
 	def wypozyczenia(br):

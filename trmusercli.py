@@ -68,7 +68,7 @@ class corobienie:
 		#lang: terazwybierzdatypoczatkowaikoncowa
 		print "Teraz wybierz datę początkową i końcową:"
 		br.select_form(nr=0)
-		print br
+		#print br
 		#print br.form
 		#lang: datapoczątkowa, rok, miesiąc, dzień
 		odyear = int(raw_input("Data początkowa: rok [XXXX]: "))

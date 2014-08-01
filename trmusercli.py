@@ -66,9 +66,18 @@ class corobienie:
 		wypozyczania = br.open('https://trm24.pl/panel-trm/borrow.jsp')
 		#wypozyczanie = wypozyczania.read()
 		#lang: terazwybierzdatypoczatkowaikoncowa
-		print "Teraz wybierz datę początkową i końcową:"
+		#print "Teraz wybierz datę początkową i końcową:"
+		#print mechanize.ParseResponse(wypozyczania, backwards_compat=False)
+		#for form in br.forms():
+		#	print form
+		#	print "_____--"
+		#	try:
+		#		print form.find_control('data_od')
+		#	except:
+		#		print "Nie"
+		#print "----"
 		br.select_form(nr=0)
-		print mechanize.ParseResponse(wypozyczania, backwards_compat=False)[0]
+		#print mechanize.ParseResponse(wypozyczania, backwards_compat=False)[0].find_control("startDate", type="text")
 		#print br.form
 		#lang: datapoczątkowa, rok, miesiąc, dzień
 		odyear = int(raw_input("Data początkowa: rok [XXXX]: "))

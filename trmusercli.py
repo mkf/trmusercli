@@ -11,7 +11,7 @@ class corobienie:
 		self.polecenia = polecenia
 		corobic = self.zdobadzpolecenie()
 		if corobic == 'stankonta':
-			self.stankonta(br,"n")
+			self.stankonta(br, "n")
 		elif corobic == 'wypozyczenia':
 			self.wypozyczenia(br)
 		elif corobic == 'histtransakcji':
@@ -35,7 +35,7 @@ class corobienie:
 			print 'Nie znaleziono polecenia: %s' % polec
 			runu = zdobadzpolecenie(polecenia)
 			return runu
-	def stankonta(br,dajreada):
+	def stankonta(self, br, dajreada):
 		import re
 		balansowanie = br.open('https://trm24.pl/panel-trm/balance.jsp')
 		balansowac = balansowanie.read()
@@ -61,7 +61,7 @@ class corobienie:
 		elif dajreada == "y":
 			tuplebalansikiread = (balansik, balansowac)
 			return tuplebalansikiread
-	def wypozyczenia(br):
+	def wypozyczenia(self, br):
 		import re
 		wypozyczania = br.open('https://trm24.pl/panel-trm/borrow.jsp')
 		#wypozyczanie = wypozyczania.read()
@@ -93,8 +93,8 @@ class corobienie:
 			tabila.append(tabi1)
 		print tabila
 		return tabila
-	def histtransakcji(br):
-		stankontatuple = self.stankonta(br,"y")
+	def histtransakcji(self, br):
+		stankontatuple = self.stankonta(br, "y")
 		stankonta = stankontatuple[0]
 		histrw = [stankonta]
 		historiowanie = stankontatuple[1]

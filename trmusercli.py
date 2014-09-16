@@ -33,7 +33,7 @@ class corobienie:
 		except:
 			#lang: nie znaleziono polecenia
 			print 'Nie znaleziono polecenia: %s' % polec
-			runu = zdobadzpolecenie(polecenia)
+			runu = self.zdobadzpolecenie()
 			return runu
 	def stankonta(self, br, dajreada):
 		import re
